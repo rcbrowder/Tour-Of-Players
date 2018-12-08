@@ -1,0 +1,31 @@
+<div *ngIf="player">
+
+  <h2> {{player.name | uppercase}}, #{{player.number}}, {{player.position}}
+  </h2>
+  <div>
+    <span>
+      ID:
+    </span>
+    {{player.id}}
+  </div>
+  <div>
+    <span>
+      Name:
+    </span>
+    {{player.name}}
+  </div>
+  <div>
+    <label>
+      Number: #
+      <input [(ngModel)]="player.number" placeholder="number">
+    </label>
+  </div>
+  <div>
+    <label>
+      Position:
+      <input [(ngModel)]="player.position" placeholder="position">
+    </label>
+
+  </div>
+
+</div>
