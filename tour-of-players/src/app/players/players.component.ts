@@ -10,24 +10,15 @@ import { PlayerService } from '../player.service';
 export class PlayersComponent implements OnInit {
 
     players: Player[];
-    onSelect(player: Player): void {
-        this.selectedPlayer = player;
-    }
 
 
-    getPlayers(): void {
-        this.players = this.playerService.getPlayers();
-    }
-
-
-
-
-  constructor(private playerService: PlayerService) {
-
-   }
+  constructor(private playerService: PlayerService) { }
 
   ngOnInit() {
       this.getPlayers();
   }
 
+  getPlayers(): void {
+      this.playerService.getPlayers().subscribe(players => this.players = players)
+  }
 }
